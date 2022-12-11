@@ -8,9 +8,9 @@ It allows extraction of various data types (blocks, transactions, scripts, publi
 
 ##### **Currently Supported Blockchains:**
 
- `Bitcoin`, `Namecoin`, `Litecoin`, `Dogecoin`, `Myriadcoin`, `Unobtanium` and `Lightningcash`.
+ `Bitcoin`, `Namecoin`, `Litecoin`, `Dogecoin`, `Myriadcoin`, `Unobtanium`, `Lightningcash` and `Triangles`.
 
-SCRIPT ADDRESSES ONLY WORKS FOR LIGHTNINGCASH IN THIS VERSION !!!!!!!
+SCRIPT ADDRESSES ONLY WORKS FOR TRIANGLES IN THIS VERSION !!!!!!!
 
 It assumes a local copy of the blockchain with intact block index, downloaded with [Bitcoin Core](https://github.com/bitcoin/bitcoin) 0.15.1+. If you are not sure whether your local copy is valid you can apply `--verify` to validate the chain and block merkle trees. If something doesn't match the parser exits.
 

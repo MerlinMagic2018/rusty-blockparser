@@ -380,7 +380,7 @@ pub fn eval_from_stack(stack: Stack, version_id: u8) -> EvaluatedScript {
             ref p @ ScriptPattern::Pay2ScriptHash => {
                 let h160 = stack.elements[1].data()?;
                 EvaluatedScript {
-                    address: Some(hash_160_to_address(&h160, 50)),
+                    address: Some(hash_160_to_address(&h160, 28)),
                     pattern: p.clone(),
                 }
             }

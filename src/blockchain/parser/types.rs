@@ -26,6 +26,7 @@ pub struct Dogecoin;
 pub struct Myriadcoin;
 pub struct Unobtanium;
 pub struct Lightningcash;
+pub struct Triangles;
 //pub struct Dash;
 
 impl Coin for Bitcoin {
@@ -189,6 +190,26 @@ impl Coin for Lightningcash {
     }
 }
 
+impl Coin for Triangles {
+    fn name(&self) -> String {
+        String::from("Triangles")
+    }
+    fn magic(&self) -> u32 {
+        0x05223570
+    }
+    fn version_id(&self) -> u8 {
+        0x41
+    }
+    fn genesis(&self) -> [u8; 32] {
+        utils::hex_to_arr32_swapped(
+            "7e7a6e4dd5fe895106fca912dfbacaeaf2a89e76c6a588df8ff96e0e18b96021",
+        )
+    }
+    fn default_folder(&self) -> PathBuf {
+        Path::new(".triangles").join("blocks")
+    }
+}
+
 /* TODO: implement X11
 impl Coin for Dash {
     fn name(&self)        -> String { String::from("Dash") }
@@ -238,6 +259,7 @@ impl FromStr for CoinType {
             "myriadcoin" => Ok(CoinType::from(Myriadcoin)),
             "unobtanium" => Ok(CoinType::from(Unobtanium)),
             "lightningcash" => Ok(CoinType::from(Lightningcash)),
+            "triangles" => Ok(CoinType::from(Triangles)),
             n => {
                 let e = OpError::new(OpErrorKind::InvalidArgsError)
                     .join_msg(&format!("The is no impl for `{}`!", n));
